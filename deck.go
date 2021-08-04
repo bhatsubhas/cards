@@ -12,11 +12,32 @@ import (
 type deck []string
 
 func newDeck() deck {
-	cards := deck{"Five of Diamonds",
-		"Ace of Diamond",
-		"Six of Heart",
-		"Ace of Heart",
-		"Queen of Heart"}
+	cards := deck{}
+	cardSuits := []string{
+		"Spades",
+		"Clubs",
+		"Hearts",
+		"Diamonds"}
+	cardValues := []string{
+		"Ace",
+		"King",
+		"Queen",
+		"Jack",
+		"Two",
+		"Three",
+		"Four",
+		"Five",
+		"Six",
+		"Seven",
+		"Eight",
+		"Nine",
+		"Ten"}
+
+	for _, suit := range cardSuits {
+		for _, value := range cardValues {
+			cards = append(cards, value+" of "+suit)
+		}
+	}
 	return cards
 }
 
